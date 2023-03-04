@@ -1,3 +1,5 @@
+print("Made By Kenny0521@52PoJie, All rights reserved.")
+
 from alive_progress import alive_bar as ps
 from json import loads as ls
 from re import compile as ce
