@@ -1,5 +1,0 @@
-<TODO>
-在此文件内输入科学文库地址，例如
-https://book.sciencereading.cn/shop/book/Booksimple/show.do?id=BBF880AEAEF5C40E8E053020B0A0A34B8000
-https://book.sciencereading.cn/shop/book/Booksimple/show.do?id=BB3F8CDB7C65683B1E053020B0A0AB809000
-脚本做了些许的反混淆处理。
