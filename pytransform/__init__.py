@@ -170,10 +170,17 @@ def assert_armored(*names):
 def check_armored(*names):
     try:
         prototype = PYFUNCTYPE(py_object, py_object)
-        prototype(('assert_armored', _pytransform))(names)
-        return True
-    except RuntimeError:
-        return False
+        dlfunc = prototype(('assert_armored', _pytransform))
+        def wrapper(func):
+            def wrap_execute(*args, **kwargs):
+                try:
+                    dlfunc(names)
+                    return func(*args, **kwargs)
+                except RuntimeError as e:
+                    print(f'Error: {e}. Please check the names and try again.')
+                    return False
+            return wrap_execute
+        return wrapper
 
 
 def get_license_info():
